@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre este livro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Acervo Digital</h1>
+    </header>
+
+    <main>
+        <section class="book-details">
+            <img id="book-cover" src="cover-placeholder.jpg" alt="Capa do Livro">
+            <h2 id="book-title">Salário, Preço e Lucro</h2>
+            <h3 id="book-author">Karl Marx</h3>
+            <p id="book-description">
+                Nessa importante e concisa obra, Marx fala sobre a formação das mercadorias <br> 
+                e introduz o conceito de mais-valia e o caráter do lucro.
+            </p>
+            <div class="download-buttons">
+                <a id="pdf-link" href="books/salario-preco-lucro.pdf" download class="btn">Download PDF</a>
+                <a id="epub-link" href="books/salario-preco-lucro.epub" download class="btn">Download EPUB</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Dados dos livros
+        const books = {
+            "manifesto-comunista": {
+                "title": "O Manifesto do Partido Comunista",
+                "author": "Karl Marx & Friedrich Engels",
+                "description": "Relevante até os dias de hoje e sendo um dos textos políticos mais influentes da história, o Manifesto Comunista analisa a luta de classes e propõe o comunismo como alternativa ao capitalismo.",
+                "cover": "covers/manifesto-comunista.jpg",
+                "pdf": "books/manifesto-comunista.pdf",
+                "epub": "books/manifesto-comunista.epub"
+            },
+            "principios-do-comunismo": {
+                "title": "Princípios do Comunismo",
+                "author": "Friedrich Engels",
+                "description": "Uma introdução concisa e acessível ao pensamento comunista, onde Engels responde a questões fundamentais sobre o comunismo e a luta de classes.",
+                "cover": "covers/principios-do-comunismo.jpg",
+                "pdf": "books/principios-do-comunismo.pdf",
+                "epub": "books/principios-do-comunismo.epub"
+            },
+            "salario-preco-e-lucro": {
+                "title": "Salário, Preço e Lucro",
+                "author": "Karl Marx",
+                "description": "Um estudo essencial sobre a exploração dos trabalhadores, explicando a relação entre salários, preços e o lucro dentro do sistema capitalista.",
+                "cover": "covers/salario-preco-e-lucro.jpg",
+                "pdf": "books/salario-preco-e-lucro.pdf",
+                "epub": "books/salario-preco-e-lucro.epub"
+            },
+            "trabalho-assalariado-e-capital": {
+                "title": "Trabalho Assalariado e Capital",
+                "author": "Karl Marx",
+                "description": "Um dos textos introdutórios mais importantes sobre economia marxista, explicando como o trabalho assalariado é a base da exploração capitalista.",
+                "cover": "covers/trabalho-assalariado-e-capital.jpg",
+                "pdf": "books/trabalho-assalariado-e-capital.pdf",
+                "epub": "books/trabalho-assalariado-e-capital.epub"
+            },
+            "estado-e-revolucao": {
+                "title": "Estado e Revolução",
+                "author": "Vladimir Lênin",
+                "description": "Uma das obras mais importantes do pensamento marxista, onde Lênin discute o papel do Estado na luta de classes e na transição para o socialismo.",
+                "cover": "covers/estado-e-revolucao.jpg",
+                "pdf": "books/estado-e-revolucao.pdf",
+                "epub": "books/estado-e-revolucao.epub"
+            },
+            "democracia-e-luta-de-classes": {
+                "title": "Democracia e Luta de Classes",
+                "author": "Vladimir Lênin",
+                "description": "Lênin analisa criticamente o conceito de democracia sob o capitalismo e argumenta sobre sua relação com a luta de classes.",
+                "cover": "covers/democracia-e-luta-de-classes.jpg",
+                "pdf": "books/democracia-e-luta-de-classes.pdf",
+                "epub": "books/democracia-e-luta-de-classes.epub"
+            },
+            "origem-da-familia-propriedade-privada-estado": {
+                "title": "A Origem da Família, da Propriedade Privada e do Estado",
+                "author": "Friedrich Engels",
+                "description": "Engels analisa a evolução histórica da família, da propriedade e do Estado, demonstrando suas ligações com a luta de classes.",
+                "cover": "covers/origem-da-familia-propriedade-privada-estado.jpg",
+                "pdf": "books/origem-da-familia-propriedade-privada-estado.pdf",
+                "epub": "books/origem-da-familia-propriedade-privada-estado.epub"
+            },
+            "socialismo-utopico-socialismo-cientifico": {
+                "title": "Do Socialismo Utópico ao Socialismo Científico",
+                "author": "Friedrich Engels",
+                "description": "Uma obra fundamental que diferencia as concepções utópicas do socialismo das análises científicas do materialismo histórico.",
+                "cover": "covers/socialismo-utopico-socialismo-cientifico.jpg",
+                "pdf": "books/socialismo-utopico-socialismo-cientifico.pdf",
+                "epub": "books/socialismo-utopico-socialismo-cientifico.epub"
+            },
+	    "imperialismo-fase-superior-capitalismo": {
+        	"title": "Imperialismo, Fase Superior do Capitalismo",
+        	"author": "Vladimir Lênin",
+        	"description": "Lênin analisa o imperialismo como uma nova fase do capitalismo, caracterizada pelo domínio do capital financeiro e a exploração global.",
+        	"cover": "covers/imperialismo-fase-superior-capitalismo.jpg",
+        	"pdf": "books/imperialismo-fase-superior-capitalismo.pdf",
+        	"epub": "books/imperialismo-fase-superior-capitalismo.epub"
+    	    },
+    	"cinco-teses-filosoficas": {
+        "title": "Cinco Teses Filosóficas",
+        "author": "Mao Zedong",
+        "description": "Inclui os ensaios 'Sobre a Prática' e 'Sobre a Contradição', fundamentais para entender a filosofia marxista aplicada à revolução.",
+        "cover": "covers/cinco-teses-filosoficas.jpg",
+        "pdf": "books/cinco-teses-filosoficas.pdf",
+        "epub": "books/cinco-teses-filosoficas.epub"
+    	},
+    	"o-capital": {
+        "title": "O Capital",
+        "author": "Karl Marx",
+        "description": "A principal obra de Karl Marx, onde ele analisa o funcionamento do capitalismo, suas contradições e a necessidade da sua superação.",
+        "cover": "covers/o-capital.jpg",
+        "pdf": "books/o-capital.pdf",
+        "epub": "books/o-capital.epub"
+    	},
+    	"materialismo-dialetico-historico": {
+        "title": "Materialismo Dialético e Materialismo Histórico",
+        "author": "Josef Stalin",
+        "description": "Uma introdução ao marxismo-leninismo, abordando os princípios do materialismo dialético e sua aplicação na história e na política.",
+        "cover": "covers/materialismo-dialetico-historico.jpg",
+        "pdf": "books/materialismo-dialetico-historico.pdf",
+        "epub": "books/materialismo-dialetico-historico.epub"
+    	},
+    	"revolucoes-unesp": {
+        "title": "Revolução Cubana, Chinesa, Vietnamita, Coreana, Chilena, Venezuelana e Russa",
+        "author": "UNESP",
+        "description": "Uma análise acadêmica sobre as principais revoluções socialistas do século XX e suas consequências políticas e sociais.",
+        "cover": "covers/revolucoes-unesp.jpg",
+        "pdf": "books/revolucoes-unesp.pdf",
+        "epub": "books/revolucoes-unesp.epub"
+    	},
+    	"reforma-ou-revolucao": {
+        "title": "Reforma ou Revolução?",
+        "author": "Rosa Luxemburgo",
+        "description": "Rosa Luxemburgo defende a necessidade da revolução proletária, criticando as ilusões reformistas dentro do movimento socialista.",
+        "cover": "covers/reforma-ou-revolucao.jpg",
+        "pdf": "books/reforma-ou-revolucao.pdf",
+        "epub": "books/reforma-ou-revolucao.epub"
+    	},
+    	"teses-de-abril": {
+        "title": "Teses de Abril",
+        "author": "Vladimir Lênin",
+        "description": "As diretrizes de Lênin para a revolução bolchevique, defendendo a transferência do poder aos sovietes e a transição para o socialismo.",
+        "cover": "covers/teses-de-abril.jpg",
+        "pdf": "books/teses-de-abril.pdf",
+        "epub": "books/teses-de-abril.epub"
+    	},
+    	"mini-manual-guerrilheiro-urbano": {
+        "title": "Mini-manual do Guerrilheiro Urbano",
+        "author": "Carlos Marighella",
+        "description": "Um guia estratégico para a guerrilha urbana, escrito por Marighella durante a luta armada contra a ditadura militar no Brasil.",
+        "cover": "covers/mini-manual-guerrilheiro-urbano.jpg",
+        "pdf": "books/mini-manual-guerrilheiro-urbano.pdf",
+        "epub": "books/mini-manual-guerrilheiro-urbano.epub"
+    	},
+    	"citacoes-presidente-mao": {
+        "title": "Citações do Presidente Mao Tsé-Tung",
+        "author": "Mao Zedong",
+        "description": "Uma coletânea das principais ideias e ensinamentos de Mao Zedong, amplamente divulgada durante a Revolução Cultural Chinesa.",
+        "cover": "covers/citacoes-presidente-mao.jpg",
+        "pdf": "books/citacoes-presidente-mao.pdf",
+        "epub": "books/citacoes-presidente-mao.epub"
+    	}
+     };
+
+        // Obter o parâmetro da URL
+        const params = new URLSearchParams(window.location.search);
+        const bookId = params.get("book");
+
+        // Verificar se o livro existe
+        if (books[bookId]) {
+            const book = books[bookId];
+
+            document.getElementById("book-title").innerText = book.title;
+            document.getElementById("book-author").innerText = book.author;
+            document.getElementById("book-description").innerHTML = book.description;
+            document.getElementById("book-cover").src = book.cover;
+            document.getElementById("pdf-link").href = book.pdf;
+            document.getElementById("epub-link").href = book.epub;
+        } else {
+            // Se o livro não for encontrado, exibir uma mensagem de erro
+            document.querySelector(".book-details").innerHTML = "<h2>Livro não encontrado</h2><p>Desculpe, este livro não existe no acervo.</p>";
+        }
+    </script>
+</body>
+</html>
