@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-image: url('/home/guilherme/Downloads/marx.jpg');
+    background-image: url('marx.jpg');
     background-size: cover;
     color: #red;
     padding: 20px;
